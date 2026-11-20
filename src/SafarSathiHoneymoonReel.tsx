@@ -526,13 +526,15 @@ export const SceneItem: React.FC<{
 };
 
 // Main Composition with Audio and Sequential Scenes
-export const SafarSathiHoneymoonReel: React.FC = () => {
+export const SafarSathiHoneymoonReel: React.FC<{
+  audioTrack?: string;
+}> = ({ audioTrack = "audio/yeh_dooriyan_romantic_30s.mp3" }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#080E1A" }}>
       {/* Background Audio Track */}
       <Audio
-        src={staticFile("audio/travel_bgm_30s.mp3")}
-        volume={0.8}
+        src={staticFile(audioTrack)}
+        volume={0.9}
         startFrom={0}
         endAt={TOTAL_DURATION_FRAMES}
       />
